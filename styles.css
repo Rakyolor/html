@@ -1,48 +1,115 @@
-
-/* La petite étoile "*" signifie que le style s'applique à la totalité du site web */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Kumbh Sans', sans-serif;
-
-
+body {
+    margin-top:0 !important;
+    padding-top:0 !important;
 }
 
+.header-menu a span {
 
-.navbar {
-    background: #131313;
-    height:80px; /* Augmentez la hauteur */
-    display: flex; /* Permet de rendre les élements du block plus maléable en hauteur/largeur et pour le responsive mobile */
-    justify-content:center; /* Alligne les élements au centre de l'axe X */
-    align-items: center; /* Alligne les élements au centre de l'axe Y */
-    font-size: 1.2rem;
-    position: sticky; /* Permet au header de rester en haut même lorsqu'on scroll vers le bas */
-    top: 0;
-    z-index: 999; /* Permet de passer par dessus tout les autres élements de la page */
-
-
+    font-weight: 300;
+    opacity: 0.3;
+    font-size: 10px;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+    color: #868894;
 }
 
-.navbar__container {
+.header-menu a {
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-right: 1px solid #34374e;
+    width: 100%;
+    padding: 25px 5px;
+    color: #868894;
+    font-weight: 500;
+    text-align: center;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+    text-decoration: none;
+    position: relative;
+}
+
+.header menu a.active {
+    color: white;
+}
+
+.header-menu {
 
     display: flex;
-    justify-content: space-between; /* Ajoutez un espace entre les élements */
-    height: 80px;
-    z-index: 1;
-    width:100%;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 50px;
-
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    margin-bottom: -1px;
 }
 
-#navbar__logo {
-    background-color: #ff8177;
-    background-image: linear-gradient(to top, #ff0844 0%, rgba(255, 209, 2, 0.067) 100%,);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}   
+a {
+    background-color: transparent;
+}
 
+.header {
+    position: relative;
+    z-index: 10;
+}
+
+.wrapper {
+    width: 100%;
+    min-width: 320px;
+    min-height: 100vh;
+    position: relative;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    opacity: 1;
+    background-color: #2b2e43;
+}
+
+
+.header-logo {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    position: relative;
+    margin-left: -30px;
+    width: calc(100% + 60px);
+}
+
+.header-logo__icon {
+    -webkit-animation: spin 10s infinite linear;
+    animation: spin 10s infinite linear;
+    -moz-animation: spin 10s infinite linear;
+    display: flex;
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+.header-logo img {
+    max-width: 100%;
+    max-height: 100%;
+}
